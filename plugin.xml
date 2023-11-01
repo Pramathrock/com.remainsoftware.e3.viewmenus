@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.remainsoftware.e3.viewmenus.HelloWorld"
+            id="com.remainsoftware.e3.viewmenus.HelloWorld"
+            name="Hello"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:com.remainsoftware.e3.viewmenus.HelloWorld">
+         <command
+               commandId="com.remainsoftware.e3.viewmenus.hello"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.remainsoftware.e3.viewmenus.Hellohandler"
+            description="we say hello"
+            id="com.remainsoftware.e3.viewmenus.hellocommand"
+            name="say hello">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.remainsoftware.e3.viewmenus.Hellohandler"
+            commandId="com.remainsoftware.e3.viewmenus.hello">
+      </handler>
+   </extension>
+
+</plugin>
